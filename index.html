@@ -9,9 +9,9 @@
   <style></style>
   <body>
     <input type="button" value="Nhap so" onclick="nhapSo()" />
-    <!-- <script>
+    <script>
       var kqsx = [
-        ["91006"],
+        ["91082"],
         ["22362"],
         ["00497", "25741"],
         ["83780", "71776", "83219", "79310", "25559", "28409"],
@@ -37,15 +37,19 @@
         let input = prompt("Nhap vao con so ban du doan:");
 
         // Tim kiem ket qua
-        for (let i = 0; i < kqsx.length; i++) {
-          if (kqsx[i].includes(input)) {
-            alert(kqsx[i]);
+        let stringKqsx = kqsx.toString();
+        let strFoxSp = stringKqsx.split(",");
+        for (const i in strFoxSp) {
+          let numb = strFoxSp[i].split("");
+          let concatNumb = numb.splice(numb.length - 2).join("");
+          if (concatNumb == input) {
+            document.write(strFoxSp[i] + "<br/>");
           }
         }
       }
 
       loadKetqua();
-    </script> -->
+    </script>
 
     <!-- <p id="demo"></p>
     <script>
@@ -101,7 +105,7 @@
       console.log("after:" + array.join(""));
     </script> -->
 
-    <script>
+    <!-- <script>
       let strFox = "TRuonG MiNh ThU";
       console.log("before:" + strFox);
 
@@ -121,6 +125,6 @@
       }
 
       console.log("after:" + array.join(" "));
-    </script>
+    </script> -->
   </body>
 </html>
